@@ -1,7 +1,7 @@
 /* General Page Styling */
 body {
     font-family: Arial, sans-serif;
-    background: #facae8;
+    background: #f2add8;
     text-align: center;
     padding: 30px;
 
@@ -11,8 +11,14 @@ body {
   }
   /* Header Styling */
   h1 {
-    color: #0d28d8;
+    color: #060608;
     font-style: italic;
+  }
+
+  nav{
+    padding: 30px;
+    word-spacing: 50px;
+    background-color: rgb(230, 145, 243);
   }
   
   /* Pet Image Styling */
@@ -26,10 +32,7 @@ body {
     transition: transform 0.2s;
     
   }
-  button{
-    background-color: #53bae7;
-    border-radius: 30px;
-  }
+ 
   /* Hover Effect on Pet Image */
   .pet:hover {
     transform: scale(1.05);
@@ -41,15 +44,18 @@ body {
     margin-top: 10px;
   }
   
-  /* Button Styling */
+  
   button {
-    padding: 10px 20px;
+    background-color: #f352d0;
+    padding: 10px;
+    border-radius: 20px;
+    width: 90px;
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
   }
   
-  /* Actions Area Styling */
+  
   #actions {
     margin-top: 20px;
   }
