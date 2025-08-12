@@ -16,11 +16,10 @@ body {
   }
 
   nav{
-    padding: 10px;
-    word-spacing: 50px;
-    background-color: rgb(230, 145, 243);
+    padding: 3px;
+    background-color: rgb(187, 32, 211);
     margin-top: -30px;
-    padding-right: 800px;
+    padding-right: 100px;
     
   }
   
@@ -61,8 +60,4 @@ body {
   
   #actions {
     margin-top: 20px;
-  }
-  h1{
-word-spacing: normal;
-margin-left: 200px;
   }
