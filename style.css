@@ -1,15 +1,17 @@
 /* General Page Styling */
 body {
     font-family: Arial, sans-serif;
-    background: #f7dded;
+    background: #facae8;
     text-align: center;
     padding: 30px;
 
   }
-  
+  p{
+    
+  }
   /* Header Styling */
   h1 {
-    color: #1f12b0;
+    color: #0d28d8;
     font-style: italic;
   }
   
@@ -19,11 +21,15 @@ body {
     height: 200px;
     margin: 20px auto;
     cursor: pointer;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 700px;
+    box-shadow: 0 4px 8px rgba(16, 14, 14, 0.2);
     transition: transform 0.2s;
+    
   }
-  
+  button{
+    background-color: #53bae7;
+    border-radius: 30px;
+  }
   /* Hover Effect on Pet Image */
   .pet:hover {
     transform: scale(1.05);

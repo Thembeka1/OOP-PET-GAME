@@ -4,72 +4,87 @@
   <meta charset="UTF-8">
   <title>Pet Clicker Game</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="./script.js" defer></script>
 </head>
 <body>
-
-  <h1>🐶🐱Pet Clicker Game</h1>
-
+  
+  <h1>🐶🐱🦜🐓Pet Clicker Game</h1>
   <p>Pick your pet:</p>
   <button onclick="choosePet('dog')">Dog</button>
   <button onclick="choosePet('cat')">Cat</button>
+  <button onclick="choosePet('Bird')">Bird</button>
+  <button onclick="choosePet('Chicken')">Chicken</button>
 
-  <div id="game" style="display: none;">
+  <section id="game" style="display: none;">
     <img 
       id="petImage" 
       class="pet" 
-      src="images.jpg"
+      src="images/images-0.jpg"
       alt="Your Pet" 
       onclick="playWithPet()"
     >
     
-    <div id="counter">Times played: 0</div>
-    <div id="actions"></div>
-  </div>
-  
+    <section id="counter">Times played: 0</section>
+    <section id="actions"></section>
+  </section>
 
   <script>
-    // Define global variables
-let playCount = 0;
-let currentPet = '';
+let currentPet = null;
+let currentSound = null;
 
-// Handle pet selection
 function choosePet(pet) {
   currentPet = pet;
 
-  // Set pet image based on selection
-  const petImage = document.getElementById('petImage');
-  petImage.src = pet === 'dog' ? 'images.jpg' : 'images/images-1.jpg';
+      const petImage = document.getElementById('petImage');
+      switch (pet) {
+        case 'dog':
+          petImage.src = 'images/images-0.jpg';
+          currentSound = new Audio('Media/dog-barks-75750.mp3')
+          break;
+        case 'cat':
+          petImage.src = 'images/images-1.jpg';
+          currentSound = new Audio('Media/cat-meow-321642.mp3')
+          break;
+        case 'Chicken':
+          petImage.src = 'images/download-1.jpg';
+          currentSound = new Audio('Media/chicken-soundscape-200111.mp3')
+          break;
+        case 'Bird':
+          petImage.src = 'images/download.jpg';
+          currentSound = new Audio('Media/bird-333090.mp3')
+          break;
+        default:
+          petImage.src = 'images/default.jpg';
+          currentSound= null
+      }
+   
+      document.getElementById('game').style.display = 'block';
 
-  // Show the game area
-  document.getElementById('game').style.display = 'block';
+      playCount = 0;
+      updateCounter();
+    }
 
-  // Reset play count
-  playCount = 0;
-  updateCounter();
-}
-
-// Handle playing with the pet
-function playWithPet() {
+  
+    function playWithPet() {
   playCount++;
   updateCounter();
 
-  // Optional: Add animation or feedback
-  const actionsDiv = document.getElementById('actions');
-  actionsDiv.innerHTML = `<p>You played with your ${currentPet}!</p>`;
+  if (currentSound) {
+    currentSound.currentTime = 0; 
+    currentSound.play();
+  }
+      const actionsDiv = document.getElementById('actions');
+      actionsDiv.innerHTML = `<p>You played with your ${currentPet}!</p>`;
 
-  // Clear message after 1.5 seconds
-  setTimeout(() => {
-    actionsDiv.innerHTML = '';
-  }, 1500);
-}
+      setTimeout(() => {
+        actionsDiv.innerHTML = '';
+      }, 1500);
+    }
 
-// Update the counter display
-function updateCounter() {
-  const counter = document.getElementById('counter');
-  counter.textContent = `Times played: ${playCount}`;
-}
-
-  </script>
+    // Update counter display
+    function updateCounter() {
+      document.getElementById('counter').textContent = `Times played: ${playCount}`;
+    }
+</script>
 </body>
 </html>
+
